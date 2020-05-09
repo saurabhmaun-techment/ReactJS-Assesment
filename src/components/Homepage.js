@@ -29,7 +29,6 @@ export default class Homepage extends React.Component{
     getCountryDetailsByCountryName(){
         fetch("https://restcountries.eu/rest/v2/name/" + this.state.countryText).then(response => response.json())
         .then(resultJSON => {
-            console.log(resultJSON)
             this.props.history.push({
                 pathname:"/country-details/",
                 state:{

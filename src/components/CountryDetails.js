@@ -1,6 +1,6 @@
 import React from 'react';
 
-const API_KEY = "a254002eef12f6a71efd0efdaae300fd"
+const API_KEY = "acdba096baa154316cce7b7cbeaea009"
 export default class CountryDetails extends React.Component{
 
     constructor(props){
@@ -16,10 +16,9 @@ export default class CountryDetails extends React.Component{
         }
     }
 
-    getCapitalWeatherDetails = (capitalName) => {
+    getCapitalWeatherDetails(capitalName){
         fetch("http://api.weatherstack.com/current?access_key="+ API_KEY +"&query=" + capitalName).then(response => response.json())
         .then(resultJSON => {
-            console.log(resultJSON)
             this.props.history.push({
                 pathname:"/capital-weather/",
                 state:{
@@ -38,7 +37,7 @@ export default class CountryDetails extends React.Component{
                         this.state.countryList.length> 0 ?
                             this.state.countryList.map((item, index) => {
                                 return (
-                                    <div className="col-sm-12">
+                                    <div className="col-sm-12 mb-4">
                                         <h4>Country Details for {item.name}</h4>
                                         <hr className="my-3" />
                                         <ul className="list-group">
