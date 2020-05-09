@@ -5,7 +5,8 @@ export default class Homepage extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            countryText:""
+            countryText:"",
+            error:false
         }
     }
 
@@ -27,14 +28,19 @@ export default class Homepage extends React.Component{
     }
 
     getCountryDetailsByCountryName(){
+        this.setState({ error: false })
         fetch("https://restcountries.eu/rest/v2/name/" + this.state.countryText).then(response => response.json())
         .then(resultJSON => {
-            this.props.history.push({
-                pathname:"/country/details/",
-                state:{
-                    countryList: resultJSON
-                }
-            })
+            if(!resultJSON.status){
+                this.props.history.push({
+                    pathname:"/country/details/",
+                    state:{
+                        countryList: resultJSON
+                    }
+                })
+            } else {
+                this.setState({ error: true })  
+            }
         })
     }
 
@@ -49,7 +55,8 @@ export default class Homepage extends React.Component{
                                     <label htmlFor="country">Enter Country</label>
                                     <input type="text" className="form-control" id="country" placeholder="Enter country" onChange={this.handleCountryInputChange} />
                                 </div>
-                                <button type="submit" className="btn btn-primary" disabled={!this.state.countryText}>Submit</button>
+                                <button type="submit" className="btn btn-primary mr-5" disabled={!this.state.countryText}>Submit</button>
+                                {this.state.error ? <span className="text-danger">Invalid country.</span> : null}
                             </form>
                         </div>
                     </div>
