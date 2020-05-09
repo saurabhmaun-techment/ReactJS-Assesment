@@ -54,9 +54,11 @@ export default class Homepage extends React.Component{
                                 <div className="form-group">
                                     <label htmlFor="country">Enter Country</label>
                                     <input type="text" className="form-control" id="country" placeholder="Enter country" onChange={this.handleCountryInputChange} />
+                                    {this.state.error ? 
+                                    <small class="form-text text-danger">Invalid country name entered.</small>
+                                    : null }
                                 </div>
-                                <button type="submit" className="btn btn-primary mr-5" disabled={!this.state.countryText}>Submit</button>
-                                {this.state.error ? <span className="text-danger">Invalid country.</span> : null}
+                                <button type="submit" className="btn btn-primary mr-3" disabled={!this.state.countryText}>Submit</button>
                             </form>
                         </div>
                     </div>
