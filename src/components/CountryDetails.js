@@ -20,7 +20,7 @@ export default class CountryDetails extends React.Component{
         fetch("http://api.weatherstack.com/current?access_key="+ API_KEY +"&query=" + capitalName).then(response => response.json())
         .then(resultJSON => {
             this.props.history.push({
-                pathname:"/capital-weather/",
+                pathname:"/capital/weather/",
                 state:{
                     capitalWeatherDetails: resultJSON
                 }
@@ -56,7 +56,7 @@ export default class CountryDetails extends React.Component{
                                             </li>
                                         </ul>
                                         <div className="mt-4">
-                                            <button className="btn btn-sm btn-info" onClick={this.getCapitalWeatherDetails.bind(item.capital)}>
+                                            <button className="btn btn-sm btn-info" onClick={() => this.getCapitalWeatherDetails(item.capital)}>
                                                 Capital Weather
                                             </button>
                                         </div>

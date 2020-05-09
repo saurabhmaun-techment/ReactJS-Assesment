@@ -30,7 +30,7 @@ export default class Homepage extends React.Component{
         fetch("https://restcountries.eu/rest/v2/name/" + this.state.countryText).then(response => response.json())
         .then(resultJSON => {
             this.props.history.push({
-                pathname:"/country-details/",
+                pathname:"/country/details/",
                 state:{
                     countryList: resultJSON
                 }
