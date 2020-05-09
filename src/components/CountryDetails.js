@@ -37,7 +37,7 @@ export default class CountryDetails extends React.Component{
                         this.state.countryList.length> 0 ?
                             this.state.countryList.map((item, index) => {
                                 return (
-                                    <div className="col-sm-12 mb-4">
+                                    <div className="col-sm-12 mb-4" key={index}>
                                         <h4>Country Details for {item.name}</h4>
                                         <hr className="my-3" />
                                         <ul className="list-group">
@@ -56,7 +56,7 @@ export default class CountryDetails extends React.Component{
                                             </li>
                                         </ul>
                                         <div className="mt-4">
-                                            <button className="btn btn-sm btn-info" onClick={() => this.getCapitalWeatherDetails(item.capital)}>
+                                            <button className="btn btn-info" onClick={() => this.getCapitalWeatherDetails(item.capital)}>
                                                 Capital Weather
                                             </button>
                                         </div>

@@ -45,8 +45,8 @@ export default class Homepage extends React.Component{
                     <div className="row mt-5">
                         <div className="col">
                             <form name="countryform" onSubmit={this.formSubmitHandler}>
-                                <div class="form-group">
-                                    <label for="country">Enter Country</label>
+                                <div className="form-group">
+                                    <label htmlFor="country">Enter Country</label>
                                     <input type="text" className="form-control" id="country" placeholder="Enter country" onChange={this.handleCountryInputChange} />
                                 </div>
                                 <button type="submit" className="btn btn-primary" disabled={!this.state.countryText}>Submit</button>

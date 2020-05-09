@@ -34,7 +34,7 @@ export default class CapitalWeather extends React.Component{
                                         {
                                             this.state.weatherDetails.current.weather_icons.map((item, index) => {
                                                 return(
-                                                    <img className="mx-2" height={50} width={50} alt={item.name} src={item} />
+                                                    <img className="mx-2" height={50} width={50} alt={item.name} src={item} key={index} />
                                                 )
                                             })
                                         }
