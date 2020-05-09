@@ -12,7 +12,8 @@ export default class App extends React.Component{
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Homepage} /> 
-          <Route path="/country/details/" exact component={CountryDetails} /> 
+          <Route path="/country-details/" exact component={CountryDetails} /> 
+          <Route path="/capital-weather/" exact component={CountryDetails} /> 
         </Switch>
       </BrowserRouter>
     )

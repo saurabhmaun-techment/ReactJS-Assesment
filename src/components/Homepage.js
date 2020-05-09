@@ -31,7 +31,7 @@ export default class Homepage extends React.Component{
         .then(resultJSON => {
             console.log(resultJSON)
             this.props.history.push({
-                pathname:"/country/details/",
+                pathname:"/country-details/",
                 state:{
                     countryList: resultJSON
                 }
