@@ -57,7 +57,7 @@ export default class CountryDetails extends React.Component{
                                             </li>
                                         </ul>
                                         <div className="mt-4">
-                                            <button className="btn btn-sm btn-info" onClick={this.getCapitalWeatherDetails(item.capital)}>
+                                            <button className="btn btn-sm btn-info" onClick={this.getCapitalWeatherDetails.bind(item.capital)}>
                                                 Capital Weather
                                             </button>
                                         </div>
