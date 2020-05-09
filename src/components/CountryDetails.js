@@ -16,7 +16,7 @@ export default class CountryDetails extends React.Component{
         }
     }
 
-    getCapitalWeatherDetails(capitalName){
+    getCapitalWeatherDetails = (capitalName) => {
         fetch("http://api.weatherstack.com/current?access_key="+ API_KEY +"&query=" + capitalName).then(response => response.json())
         .then(resultJSON => {
             console.log(resultJSON)
